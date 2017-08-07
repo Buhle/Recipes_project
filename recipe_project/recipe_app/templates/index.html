@@ -1,0 +1,20 @@
+{% include 'partials/header.html' %}
+    <table>
+        {% for recipe in recipes %}
+            <tr>
+                <th rowspan="3">
+                    <img src="{{recipe.photo.url}}" width="70" height="70" border="1">
+                </th>
+                <td><a href="/recipes/details/{{recipe.id}}"><b>{{recipe}}</b></a></td>
+            </tr>
+            <tr>
+                <td><b>Raings: {{recipe}}</b></td>
+            </tr>
+            <tr>
+                <td><b>Cook:</b> {{recipe.cooking_time}}
+                <b>Makes:</b> Serves {{recipe.servings}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% include 'partials/footer.html' %}
