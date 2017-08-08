@@ -3,12 +3,16 @@
         {% for recipe in recipes %}
             <tr>
                 <th rowspan="3">
-                    <img src="{{recipe.photo.url}}" width="70" height="70" border="1">
+                    <img src="/recipes{{recipe.photo.url}}" width="70" height="70" border="1">
                 </th>
                 <td><a href="/recipes/details/{{recipe.id}}"><b>{{recipe}}</b></a></td>
             </tr>
             <tr>
-                <td><b>Raings: {{recipe}}</b></td>
+                <td><b>Raings:</b>
+                {% for i in range(1) %}:
+                    <b>Raings: {{recipe.rating}}</b>
+                {% endfor %}
+                </td>
             </tr>
             <tr>
                 <td><b>Cook:</b> {{recipe.cooking_time}}

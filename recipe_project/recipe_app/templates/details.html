@@ -3,32 +3,36 @@
 <style>
     table {border: 1px solid-black;}
 </style>
-    <a href="/recipes" ><button> <<< Back</button></a>
-<table><tr><td>
-    <table style="width:50%" border-bottom="1px solid-black">
-        <tr>
-            <th rowspan="3" width="10%" >
-                <img src="{{recipe.photo.url}}" width="120" height="120" border="1">
-            </th>
+    <a href="/recipes" > <<< Back</a>
 
-            <td><b>{{recipe}}</b></td>
-        </tr>
-        <tr>
-            <td colspan="2">Raings: <b>{{recipe}}</b></td>
-        </tr>
-        <tr>
-            <td><b>Cook:</b> {{recipe.cooking_time}}
-            <b>Makes:</b> Serves {{recipe.servings}}</td>
-        </tr>
+<div class="wrapper">
+    <div id="toppane">
+        <table style="width:50%">
+            <tr>
+                <th rowspan="3" width="10%" >
+                    <img src="/recipes{{recipe.photo.url}}" width="120" height="120" border="1">
+                </th>
 
-    </table></td></tr><tr><td>
-    <table>
-        <tr>
-            <td width="50%"><b>Ingedients</b>
-            {{recipe.ingredients}}</td>
-            <td><b>Description</b>
-            {{recipe.cooking_instructions}} </td>
-        </tr>
-    </table></td></tr>
-    </table>
+                <td><b>{{recipe}}</b></td>
+            </tr>
+            <tr>
+                <td colspan="2">Raings: <b>{{recipe.rating}}</b></td>
+            </tr>
+            <tr>
+                <td><b>Cook:</b> {{recipe.cooking_time}}
+                <b>Makes:</b> Serves {{recipe.servings}}</td>
+            </tr>
+        </table>
+    </div>
+    <div id="leftpane">
+        <p><b> Ingedients </b></p>
+        <p> {{recipe.ingredients}} </p>
+    </div>
+
+    <div id="rightpane">
+        <p><b> Description </b></p>
+        <p> {{recipe.cooking_instructions}} </p>
+    </div>
+</div>
+    <!--</table>-->
 {% include 'partials/footer.html' %}

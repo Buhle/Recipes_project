@@ -7,7 +7,7 @@ from django.utils import timezone
 class Recipes(models.Model):
     title = models.CharField(max_length=255)
     photo = models.ImageField(upload_to='images')
-    rating = models.CharField(max_length=50)
+    rating = models.IntegerField(default=0, blank=True)
     prep_time = models.CharField(max_length=50)
     cooking_time = models.CharField(max_length=50)
     servings = models.IntegerField()

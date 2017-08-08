@@ -18,6 +18,7 @@ def details(request, id):
     }
     return render(request, 'details.html', context=data)
 
+
 def create(request):
     print(request)
     if request.method == 'POST':
@@ -26,11 +27,13 @@ def create(request):
         cook_time = request.POST['cooking_time']
         serving = request.POST['servings']
         photo = request.FILES['photo']
+        # rating = request.POST['rating']
+        rating = 1
         ingredients = request.POST['ingredients']
         cook_instr = request.POST['cooking_instructions']
 
         recipe = Recipes(title=title, prep_time=prep, cooking_time=cook_time, servings=serving,
-                         photo=photo, cooking_instructions=cook_instr, ingredients=ingredients)
+                         photo=photo, cooking_instructions=cook_instr, ingredients=ingredients,rating=rating)
         recipe.save()
         return redirect('/recipes')
     else:

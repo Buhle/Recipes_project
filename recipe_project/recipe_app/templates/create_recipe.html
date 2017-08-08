@@ -1,10 +1,6 @@
 {% include 'partials/header.html' %}
     {% load static %}
-
-
-    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
-    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
-
+    bg-color="sky blue"
     <form action="{% url 'create' %}" enctype="multipart/form-data" method="post">
       {% csrf_token %}
       Title:<br> <input type="text" name="title" id="title" required><br><br>
@@ -15,7 +11,7 @@
        </textarea><br><br>
       Cooking instructions:<br> <textarea rows="6" cols="50" name="cooking_instructions" id="cooking_instructions"
                                           required> </textarea><br><br>
-      Ratings:<br><br>
+      Ratings:<br> <input type="number" name="rating" id="rating" required><br><br>
       Image: <input type="file" name="photo" id="photo" accept="image/*" required><br><br>
       <input type="submit" value="Submit">
     </form>
